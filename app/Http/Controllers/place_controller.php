@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\tblplaces;
+use App\Models\tblusers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -22,9 +23,40 @@ class place_controller extends Controller
         
         $data['data_place'] = tblplaces::all();
         return view('index')->with($data);
+
     }
 
+    public function signin()
+    {
+        
+        // $data['data_place'] = tblplaces::all();
+        return view('includes/signin');
+    }
 
+    public function register()
+    {
+        
+        // $data['data_place'] = tblplaces::all();
+        return view('includes/register');
+    }
+
+    public function store(Request $request)
+    {
+        // Validate the request...
+
+        $register = new tblusers;
+
+        $register->fname = $request->fname;
+        $register->mnumber = $request->mnumber;
+        $register->email = $request->email;
+        $register->password = $request->password;
+        $register->RegDate = date("Y/m/d");
+        $register->UpdationDate = date("Y/m/d");
+
+        $register->save();
+        
+        return redirect()->back()->with('success', 'your message,here');
+    }
 
 
 

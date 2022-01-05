@@ -15,8 +15,10 @@ use App\Models\tblplaces;
 */
 
 
-Route::get('/place', 'App\Http\Controllers\place_controller@index');
+Route::get('/index', 'App\Http\Controllers\place_controller@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/signin','App\Http\Controllers\place_controller@signin'); 
+
+Route::get('/register','App\Http\Controllers\place_controller@register'); 
+
+Route::post('/register','App\Http\Controllers\place_controller@store')->name('test.store'); 

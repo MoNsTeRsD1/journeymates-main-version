@@ -17,7 +17,7 @@ class pages extends Model
      * @var array
      */
     protected $table = "pages";
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'page_id';
     protected $fillable = [
        'type',
        'detail',

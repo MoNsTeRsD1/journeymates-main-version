@@ -1,0 +1,80 @@
+<?php
+error_reporting(0);
+if(isset($_POST['submit']))
+{
+$fname=$_POST['fname'];
+$mnumber=$_POST['mobilenumber'];
+$email=$_POST['email'];
+$password=md5($_POST['password']);
+$sql="INSERT INTO  tblusers(FullName,MobileNumber,EmailId,Password) VALUES(:fname,:mnumber,:email,:password)";
+$query = $dbh->prepare($sql);
+$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+$query->bindParam(':mnumber',$mnumber,PDO::PARAM_STR);
+$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->execute();
+$lastInsertId = $dbh->lastInsertId();
+if($lastInsertId)
+{
+$_SESSION['msg']="You are Scuccessfully registered. Now you can login ";
+header('location:thankyou.php');
+}
+else 
+{
+$_SESSION['msg']="Something went wrong. Please try again.";
+header('location:thankyou.php');
+}
+}
+?>
+<!--Javascript for check email availabilty-->
+<script>
+function checkAvailability() {
+
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availability.php",
+data:'emailid='+$("#email").val(),
+type: "POST",
+success:function(data){
+$("#user-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+</script>
+
+			<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+    <div class="grid min-h-screen place-items-center">
+      <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <h1 class="text-xl font-semibold"><b>JourneyMates </b><br><span class="font-normal">signup to unlock the best of JourneyMates</span></h1>
+
+    <form action='/register' method="post" accept-charset="UTF-8">
+		@csrf
+      <label for="Full Name" class="block text-xs font-semibold text-gray-600 uppercase">Full Name</label>
+      <input id="fname" type="fname" name="fname" placeholder="john Doe" autocomplete="fname" class="block w-full p-3 mt-2  bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+      <label for="email" class="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+      <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+      <label for="mnumber" class="block text-xs font-semibold text-gray-600 uppercase">Mobile Number</label>
+      <input id="mnumber" type="tel" name="mnumber" placeholder="+60 123 4567"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+      <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+      <input id="password" type="password" name="password" placeholder="********" autocomplete="current-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+      <input type="submit" value="Register" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+        
+      <br><br>
+      <p>already have an account?</p>
+      <p class="text-gray-500 cursor-pointer hover:text-black"><a href="{{ url('signin') }}">Sign in</a></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+

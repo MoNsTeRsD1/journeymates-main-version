@@ -17,14 +17,16 @@ class tblusers extends Model
      * @var array
      */
     protected $table = "tblusers";
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'user_id';
     protected $fillable = [
-        'FullName',
-        'MobileNumber',
-        'EmailId',
-        'Password',
+        'fname',
+        'mnumber',
+        'email',
+        'password',
         'RegDate',
         'UpdationDate',
+        'updated_at',
+        'created_at',
     ];
 
 
