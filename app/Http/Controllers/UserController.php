@@ -65,7 +65,7 @@ class UserController extends Controller
 
         $register->save();
         
-        $request->session()->flash('Success', 'Registration Sucesfull ! Please Login');
+        $request->session()->flash('Success', 'Registration Succesful! Please Login');
         return redirect()->back()->with('success', 'your message,here');
     }
 

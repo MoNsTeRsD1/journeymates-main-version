@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
 </head>
 <body>
     <div class="w-full fixed bg-white z-10">
@@ -31,7 +30,7 @@
                         </svg>
                     </button>
                     <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-                        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
                             <li>
                                 <a href="#"
                                     class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">Review</a>
@@ -46,10 +45,40 @@
                             </li>
                             <?php if(Auth::check()){ ?>
                             <li>
-                                <a href="{{ url('signout') }}"
-                                    class="block py-2 pr-4 pl-3 text-gray-400 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent">Sign
-                                    Out</a>
-                            </li>
+                                <div class="relative">
+                                    <!-- Dropdown toggle button -->
+                                    <img onclick="dropdown()" class="h-12 w-12 dropbtn cursor-pointer rounded-full object-cover" src="https://i.pinimg.com/474x/64/b2/95/64b295c8c9df6a71bb8e72adcb1bb6cd.jpg" alt="">
+                                    <!-- Dropdown list -->
+                                    <div id="myDropdown" class="absolute right-0 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl w-44 dropdown-content hidden z-50">
+                                        <a href="{{ url('profile') }}" class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                                            My Profile
+                                        </a>
+                                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                                            Bookmarks
+                                        </a>
+                                        <a href="{{ url('signout') }}" class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
+                                            Sign Out
+                                        </a>
+                                    </div>
+                                </div>
+                                <script>
+                                    function dropdown() {
+                                        document.getElementById("myDropdown").classList.toggle("hidden");
+                                    }
+                                    window.onclick = function(event) {
+                                        if (!event.target.matches('.dropbtn')) {
+                                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                                var i;
+                                                for (i = 0; i < dropdowns.length; i++) {
+                                                    var openDropdown = dropdowns[i];
+                                                    if (!openDropdown.classList.contains('hidden')) {
+                                                        openDropdown.classList.add('hidden');
+                                                    }
+                                                }
+                                            }
+                                        }
+                                </script>
+                            </li>    
                             <?php } else{ ?>
                             <li>
                                 <a href="{{ url('login') }}"
