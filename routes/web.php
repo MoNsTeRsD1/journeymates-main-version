@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\tblplaces;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +17,22 @@ use App\Models\tblplaces;
 */
 
 
-Route::get('/index', 'App\Http\Controllers\place_controller@index');
+//Route::get('index', [HomeController::class, 'index']);
 
-Route::get('/signin','App\Http\Controllers\place_controller@signin'); 
+Route::get('login', [UserController::class, 'index'])->name('login'); 
+Route::post('login', [UserController::class, 'login']); 
 
-Route::get('/register','App\Http\Controllers\place_controller@register'); 
+Route::get('register',[UserController::class, 'register']); 
+Route::post('register',[UserController::class, 'store'])->name('test.store'); 
 
-Route::post('/register','App\Http\Controllers\place_controller@store')->name('test.store'); 
+Route::get('index', [HomeController::class, 'index']);
+
+
+Route::get('/signout','App\Http\Controllers\UserController@logout'); 
+
+Route::get('profile', [UserController::class, 'profile']);
+
+Route::group(['middleware' => 'auth'], function(){
+
+
+});
