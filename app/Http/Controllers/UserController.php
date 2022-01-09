@@ -73,21 +73,6 @@ class UserController extends Controller
     public function login(Request $request)
     {
     
-        // $credentials = $request -> validate([
-        //     'email' => 'required|email:dns',
-
-        //     'password' => 'required|string'
-
-
-        // ]);
-
-        // if(Auth::attempt($credentials)){
-        //     $request->session()->regenerate();
-
-        //     return redirect()->intended('index');
-        // }
-
-        // return back() -> with('loginError', 'Login failed!');
         
         $messages = [
 
@@ -132,8 +117,15 @@ class UserController extends Controller
     public function profile()
     {
         
-        // $data['data_place'] = tblplaces::all();
+        
         return view('profile');
+    }
+
+    public function dashboard()
+    {
+        
+        
+        return view('dashboard');
     }
 
 }

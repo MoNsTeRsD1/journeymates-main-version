@@ -30,6 +30,9 @@ Route::get('index', [HomeController::class, 'index']);
 
 Route::get('/signout','App\Http\Controllers\UserController@logout'); 
 
+
+Route::get('dashboard','App\Http\Controllers\UserController@dashboard'); 
+
 Route::get('profile', [UserController::class, 'profile']);
 
 Route::group(['middleware' => 'auth'], function(){
