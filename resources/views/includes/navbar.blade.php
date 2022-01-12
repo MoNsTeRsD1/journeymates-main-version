@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-</head>
-<body>
-    <!--navbar-->
     <div class="w-full fixed bg-white z-10">
         <div class="container mx-auto">
             <nav class="bg-white px-2 sm:px-4 py-4 mx-12">
@@ -109,5 +100,3 @@
         </div>
     </div>
     </div>
-</body>
-</html>
