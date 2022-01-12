@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 </head>
 
 <body>
+    <!--navbar-->
     @include('includes.navbar')
     <!--top squares-->
     <div class="container mx-auto pt-24">
@@ -366,6 +367,8 @@ use Illuminate\Support\Facades\Auth;
         </div>
     </div>
     </div>
+    <!--footer-->
+    @include('includes.footer')
 </body>
 
 </html>
