@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Auth;
                     <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
                         <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
                             <li>
-                                <div class="pt-2 relative mx-auto text-gray-600">
+                                <form class="pt-2 relative mx-auto text-gray-600">
                                     <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                                       type="search" name="search" placeholder="Search">
                                     <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
@@ -57,7 +57,7 @@ use Illuminate\Support\Facades\Auth;
                                           d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
                                       </svg>
                                     </button>
-                                  </div>
+                                </form>
                             </li>
                             <li>
                                 <a href="#"
@@ -202,6 +202,24 @@ use Illuminate\Support\Facades\Auth;
         </a>
     </div>
     </div>
+    </div>
+    <!--big searchbar-->
+    <div class="container mx-auto pt-10">
+        <div class="mx-12 bg-center bg-cover" style="background-image: url(https://s3-alpha-sig.figma.com/img/6d5d/1bc9/bddbce21a89bf98295e7de6582d6b6b4?Expires=1642982400&Signature=IvRqsRqAgQNypSIdLUM4rfUh2Xp3kcxiuLmrOUh8RxiimvhfwqeynidSfSLvNFU0IDqhs8Axhvdacjsugqgb2y~I920UgA7E8nl67te0PZCaUti3Soa5RYClbM2~oQrR2Z4rOWxQvq8fES6Zo6zvN1uyp9NMosaDJXJKFls-4AqPp05gG8sP51jkgwrX8y4B01pHoQFLVpYMioXYDojPUyeak2Wh2Bfzb7kQqsLqSaE9xGIQcCDfbGklVJpKXjGArKOEzxwruZppYnnW0zyeq8g4IxEbsc9S8Z8nMG82Exw2CC-wwOqB0XqNRwn6ooA3tLNoNjr5w2zRPmcA~cL1lw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA)">
+            <form class="flex pt-2 relative mx-auto text-gray-600">
+                    <input class="border-2 border-gray-300 bg-white h-16 w-full px-5 pr-16 rounded-full text-lg focus:outline-none mx-12 my-32"
+                    type="search" name="search" placeholder="Search">
+                    <button type="submit" class="absolute right-20 top-40">
+                        <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                            viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                            width="512px" height="512px">
+                            <path
+                            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                        </svg>
+                    </button>
+                </form>
+        </div>
     </div>
     <!--small cards-->
     <div class="container mx-auto py-5 pb-16">
