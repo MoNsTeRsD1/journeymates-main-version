@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bookmarks</title>
 </head>
-<body>
+<body class="bg-gray-200">
     
 </body>
 </html>
