@@ -1,4 +1,4 @@
-<div class="bg-[#f0eae5]">
+<div class="bg-[#f0eae5] absolute bottom-0 w-full">
 	<div class=" container mx-auto">
 		<div class="mx-12 flex py-12 justify-between  items-center">	
 			<div>

@@ -13,10 +13,13 @@
         rel="stylesheet">
 </head>
 <body class="bg-gray-200">
-    <!--navbar-->
-    @include('includes.navbar')
-    <!--footer-->
-    @include('includes.footer')
-    
+    <div class="relative min-h-screen">
+        <div class="pb-32">
+            <!--navbar-->
+            @include('includes.navbar')
+        </div>
+        <!--footer-->
+        @include('includes.footer')
+    </div>
 </body>
 </html>
