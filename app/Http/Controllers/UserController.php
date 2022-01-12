@@ -128,6 +128,13 @@ class UserController extends Controller
         return view('dashboard');
     }
 
+    public function bookmarks()
+    {
+        
+        
+        return view('bookmarks');
+    }
+
 }
 
     

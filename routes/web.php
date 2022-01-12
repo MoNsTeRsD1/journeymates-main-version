@@ -35,6 +35,8 @@ Route::get('dashboard','App\Http\Controllers\UserController@dashboard');
 
 Route::get('profile', [UserController::class, 'profile']);
 
+Route::get('bookmarks', [UserController::class, 'bookmarks']);
+
 Route::group(['middleware' => 'auth'], function(){
 
 

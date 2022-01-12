@@ -18,7 +18,8 @@
 </head>
 
 <body class="bg-gray-200">
-    @include('includes.navbar')>
+    <!--navbar-->
+    @include('includes.navbar')
     <!--Profile body-->
     <main class="profile-page">
         <section class="relative block h-500-px">
