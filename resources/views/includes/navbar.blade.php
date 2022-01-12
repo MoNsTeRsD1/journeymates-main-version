@@ -39,12 +39,12 @@
                                 </form>
                             </li>
                             <li>
-                                <a href="#"
+                                <a href="{{ url('reviewhome') }}"
                                     class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">Review</a>
                             </li>
                             <li>
-                                <a href="#"
-                                    class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">Trips</a>
+                                <a href="{{ url('bookmarks') }}"
+                                    class="block py-2 pr-4 pl-3 text-gray-400 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700">Bookmarks</a>
                             </li>
                             <li>
                                 <a href="#"
@@ -57,11 +57,9 @@
                                     <img onclick="dropdown()" class="h-12 w-12 dropbtn cursor-pointer rounded-full object-cover" src="https://i.pinimg.com/474x/64/b2/95/64b295c8c9df6a71bb8e72adcb1bb6cd.jpg" alt="">
                                     <!-- Dropdown list -->
                                     <div id="myDropdown" class="absolute right-0 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl w-44 dropdown-content hidden z-50">
+                                        <h1 class="block px-4 py-2 text-lg text-gray-300 text-gray-700">Hi, Alan Tuner</h1><hr>
                                         <a href="{{ url('profile') }}" class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
                                             My Profile
-                                        </a>
-                                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
-                                            Bookmarks
                                         </a>
                                         <a href="{{ url('signout') }}" class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
                                             Sign Out

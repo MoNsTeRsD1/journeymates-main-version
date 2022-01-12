@@ -12,7 +12,11 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@700&family=Quicksand:wght@700&display=swap"
         rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-200">
+    <!--navbar-->
+    @include('includes.navbar')
+    <!--footer-->
+    @include('includes.footer')
     
 </body>
 </html>
