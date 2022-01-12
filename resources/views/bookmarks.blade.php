@@ -20,6 +20,10 @@
         <div class="pb-32">
             <!--navbar-->
             @include('includes.navbar')
+            <div class="container mx-auto pt-48">
+                <h1 class="text-2xl text-center" style="font-family: 'Nunito', sans-serif;">Bookmarks</h1>
+                <h2 class="text-2xl text-center mt-24" style="font-family: 'Nunito', sans-serif;">Looks like you still don't have any bookmark. Start saving your wishlist destination trip, travel later!</h2>
+            </div>
         </div>          
         <!--footer-->
         @include('includes.footer')
