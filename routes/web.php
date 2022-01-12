@@ -37,6 +37,8 @@ Route::get('profile', [UserController::class, 'profile']);
 
 Route::get('bookmarks', [UserController::class, 'bookmarks']);
 
+Route::get('reviewhome', [UserController::class, 'reviewhome']);
+
 Route::group(['middleware' => 'auth'], function(){
 
 

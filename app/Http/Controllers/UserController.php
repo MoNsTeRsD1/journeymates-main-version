@@ -135,6 +135,12 @@ class UserController extends Controller
         return view('bookmarks');
     }
 
+    public function reviewhome()
+    {
+        
+        
+        return view('reviewhome');
+    }
 }
 
     
